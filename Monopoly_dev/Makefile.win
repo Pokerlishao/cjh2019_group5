@@ -1,0 +1,76 @@
+# Project: Monopoly
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = libgraphics/exceptio.o libgraphics/genlib.o libgraphics/graphics.o libgraphics/random.o libgraphics/simpio.o libgraphics/strlib.o Main.o mycode/DrawMenuBar.o mycode/help.o mycode/load.o mycode/Map1_demo.o mycode/morecolor.o mycode/save.o mycode/setting.o mycode/start_menu.o mycode/turntable.o mycode/spiral.o
+LINKOBJ  = libgraphics/exceptio.o libgraphics/genlib.o libgraphics/graphics.o libgraphics/random.o libgraphics/simpio.o libgraphics/strlib.o Main.o mycode/DrawMenuBar.o mycode/help.o mycode/load.o mycode/Map1_demo.o mycode/morecolor.o mycode/save.o mycode/setting.o mycode/start_menu.o mycode/turntable.o mycode/spiral.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -mwindows -lwinmm  -mwindows
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"./include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"./include"
+BIN      = graphics.exe
+CXXFLAGS = $(CXXINCS) -Wfatal-errors -std=c99
+CFLAGS   = $(INCS) -Wfatal-errors -std=c99
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+libgraphics/exceptio.o: libgraphics/exceptio.c
+	$(CC) -c libgraphics/exceptio.c -o libgraphics/exceptio.o $(CFLAGS)
+
+libgraphics/genlib.o: libgraphics/genlib.c
+	$(CC) -c libgraphics/genlib.c -o libgraphics/genlib.o $(CFLAGS)
+
+libgraphics/graphics.o: libgraphics/graphics.c
+	$(CC) -c libgraphics/graphics.c -o libgraphics/graphics.o $(CFLAGS)
+
+libgraphics/random.o: libgraphics/random.c
+	$(CC) -c libgraphics/random.c -o libgraphics/random.o $(CFLAGS)
+
+libgraphics/simpio.o: libgraphics/simpio.c
+	$(CC) -c libgraphics/simpio.c -o libgraphics/simpio.o $(CFLAGS)
+
+libgraphics/strlib.o: libgraphics/strlib.c
+	$(CC) -c libgraphics/strlib.c -o libgraphics/strlib.o $(CFLAGS)
+
+Main.o: Main.c
+	$(CC) -c Main.c -o Main.o $(CFLAGS)
+
+mycode/DrawMenuBar.o: mycode/DrawMenuBar.c
+	$(CC) -c mycode/DrawMenuBar.c -o mycode/DrawMenuBar.o $(CFLAGS)
+
+mycode/help.o: mycode/help.c
+	$(CC) -c mycode/help.c -o mycode/help.o $(CFLAGS)
+
+mycode/load.o: mycode/load.c
+	$(CC) -c mycode/load.c -o mycode/load.o $(CFLAGS)
+
+mycode/Map1_demo.o: mycode/Map1_demo.c
+	$(CC) -c mycode/Map1_demo.c -o mycode/Map1_demo.o $(CFLAGS)
+
+mycode/morecolor.o: mycode/morecolor.c
+	$(CC) -c mycode/morecolor.c -o mycode/morecolor.o $(CFLAGS)
+
+mycode/save.o: mycode/save.c
+	$(CC) -c mycode/save.c -o mycode/save.o $(CFLAGS)
+
+mycode/setting.o: mycode/setting.c
+	$(CC) -c mycode/setting.c -o mycode/setting.o $(CFLAGS)
+
+mycode/start_menu.o: mycode/start_menu.c
+	$(CC) -c mycode/start_menu.c -o mycode/start_menu.o $(CFLAGS)
+
+mycode/turntable.o: mycode/turntable.c
+	$(CC) -c mycode/turntable.c -o mycode/turntable.o $(CFLAGS)
+
+mycode/spiral.o: mycode/spiral.c
+	$(CC) -c mycode/spiral.c -o mycode/spiral.o $(CFLAGS)
